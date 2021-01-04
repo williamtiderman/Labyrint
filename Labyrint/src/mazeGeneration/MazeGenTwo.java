@@ -169,7 +169,7 @@ public class MazeGenTwo {
 
     // a test client
     public static void main(String[] args) {
-        int n = Integer.parseInt(args[0]);
+        int n = 15;
         MazeGenTwo maze = new MazeGenTwo(n);
         StdDraw.enableDoubleBuffering();
         maze.draw();
