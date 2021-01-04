@@ -1,10 +1,14 @@
+package mazeGeneration;
 import java.awt.BasicStroke;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 
-public class mazeGenerator {
+import javax.swing.JComponent;
+
+public class mazeGen extends JComponent {
 	private int dims, thickness, margin;
 
-    public mazeGenerator(int dims, int thickness, int margin){
+    public mazeGen(int dims, int thickness, int margin){
         this.dims = dims;
         this.thickness = thickness;
         this.margin = margin;
@@ -14,7 +18,7 @@ public class mazeGenerator {
 
         super.paintComponent(g);
 
-        Graphics g2 = (Graphics) g;
+        Graphics2D g2 = (Graphics2D) g;
         BasicStroke stroke = new BasicStroke(thickness);
         g2.setStroke(stroke);
         int j = 0;
