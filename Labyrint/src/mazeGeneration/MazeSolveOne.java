@@ -27,9 +27,7 @@ public class MazeSolveOne {
         StdDraw.setPenColor(StdDraw.BLUE);
         StdDraw.filledCircle(x + 0.5, y + 0.5, 0.25);
         StdDraw.show();
-
-        //StdDraw.pause(30);fsad
-
+        StdDraw.pause(20);
 
         // reached Ending
         if (x == n && y == n) done = true;
@@ -53,7 +51,7 @@ public class MazeSolveOne {
         StdDraw.filledCircle(x + 0.5, y + 0.5, 0.25);
         StdDraw.show();
         System.out.println("Fel Väg");
-        //StdDraw.pause(5);
+        StdDraw.pause(20);
     }
 
     // solve the maze starting from the start state
