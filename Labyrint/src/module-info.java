@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author William
+ *
+ */
+module Labyrint {
+}
