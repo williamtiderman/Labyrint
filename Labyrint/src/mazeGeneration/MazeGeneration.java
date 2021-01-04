@@ -8,7 +8,6 @@ public interface MazeGeneration {
 	public boolean[][] getWest();
 	public boolean[][] getSouth();
 	public boolean[][] getVisited();
-	public boolean getDone();
 	int getN();
 	
 }

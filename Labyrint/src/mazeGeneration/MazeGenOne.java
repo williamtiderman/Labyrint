@@ -43,13 +43,7 @@ public class MazeGenOne implements MazeGeneration {
 	@Override
 	public boolean[][] getVisited() {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean getDone() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.visited;
 	}
     
     
