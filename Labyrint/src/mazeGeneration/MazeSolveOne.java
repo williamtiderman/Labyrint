@@ -2,13 +2,21 @@ package mazeGeneration;
 
 public class MazeSolveOne {
 	
-	private int n;                 // dimension of maze
+	private int n;   // dimension of maze
+	private int x;
+	private int y;
 	private boolean[][] north;     // is there a wall to north of cell i, j
 	private boolean[][] east;
 	private boolean[][] south;
 	private boolean[][] west;
 	private boolean[][] visited;
 	private boolean done = false;
+	
+	public MazeSolveOne(int x, int y){
+		this.x = x;
+		this.y = y;
+		solve(x,y);
+	}
 	
     // solve the maze using depth-first search
     private void solve(int x, int y) {
