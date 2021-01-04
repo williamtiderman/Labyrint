@@ -77,7 +77,7 @@ public class mazeGen3 {
 	};
  
 	public static void main(String[] args) {
-		int x = args.length >= 1 ? (Integer.parseInt(args[0])) : 15;
+		int x = args.length >= 1 ? (Integer.parseInt(args[0])) : 135;
 		int y = args.length == 2 ? (Integer.parseInt(args[1])) : 12;
 		mazeGen3 maze = new mazeGen3(x, y);
 		maze.display();
