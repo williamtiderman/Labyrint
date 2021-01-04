@@ -119,7 +119,7 @@ public class MazeGenTwo {
         StdDraw.setPenColor(StdDraw.BLUE);
         StdDraw.filledCircle(x + 0.5, y + 0.5, 0.25);
         StdDraw.show();
-        StdDraw.pause(30);
+        StdDraw.pause(2);
 
         // reached Ending
         if (x == n && y == n) done = true;
@@ -165,9 +165,6 @@ public class MazeGenTwo {
         StdDraw.show();
         StdDraw.pause(1000);
     }
-//asdasd
-
-
     // a test client
     public static void main(String[] args) {
         int n = 32;
