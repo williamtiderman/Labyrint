@@ -7,5 +7,4 @@
  */
 module Labyrint {
 	requires java.desktop;
-
 }
