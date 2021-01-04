@@ -121,8 +121,8 @@ public class MazeGenTwo {
         StdDraw.show();
         StdDraw.pause(30);
 
-        // reached middle
-        if (x == n/2 && y == n/2) done = true;
+        // reached Ending
+        if (x == n && y == n) done = true;
 
         if (!north[x][y]) solve(x, y + 1);
         if (!east[x][y])  solve(x + 1, y);
@@ -134,7 +134,8 @@ public class MazeGenTwo {
         StdDraw.setPenColor(StdDraw.GRAY);
         StdDraw.filledCircle(x + 0.5, y + 0.5, 0.25);
         StdDraw.show();
-        StdDraw.pause(30);
+        System.out.println("Fel Väg");
+        StdDraw.pause(20);
     }
 
     // solve the maze starting from the start state
@@ -149,7 +150,7 @@ public class MazeGenTwo {
     // draw the maze
     public void draw() {
         StdDraw.setPenColor(StdDraw.RED);
-        StdDraw.filledCircle(n/2.0 + 0.5, n/2.0 + 0.5, 0.375);
+        StdDraw.filledCircle(n + 0.5, n + 0.5, 0.375);
         StdDraw.filledCircle(1.5, 1.5, 0.375);
 
         StdDraw.setPenColor(StdDraw.BLACK);
@@ -169,7 +170,7 @@ public class MazeGenTwo {
 
     // a test client
     public static void main(String[] args) {
-        int n = 15;
+        int n = 32;
         MazeGenTwo maze = new MazeGenTwo(n);
         StdDraw.enableDoubleBuffering();
         maze.draw();

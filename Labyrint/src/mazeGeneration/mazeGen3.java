@@ -19,14 +19,25 @@ public class mazeGen3 {
 		for (int i = 0; i < y; i++) {
 			// draw the north edge
 			for (int j = 0; j < x; j++) {
-				System.out.print((maze[j][i] & 1) == 0 ? "+---" : "+   ");
+				System.out.print((maze[j][i] & 1) == 0 ? "+---" : "+   ");	
 			}
 			System.out.println("+");
+			
 			// draw the west edge
 			for (int j = 0; j < x; j++) {
 				System.out.print((maze[j][i] & 8) == 0 ? "|   " : "    ");
 			}
 			System.out.println("|");
+			
+			
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
 		}
 		// draw the bottom line
 		for (int j = 0; j < x; j++) {
@@ -77,8 +88,8 @@ public class mazeGen3 {
 	};
  
 	public static void main(String[] args) {
-		int x = args.length >= 1 ? (Integer.parseInt(args[0])) : 135;
-		int y = args.length == 2 ? (Integer.parseInt(args[1])) : 12;
+		int x = args.length >= 1 ? (Integer.parseInt(args[0])) : 16;
+		int y = args.length == 2 ? (Integer.parseInt(args[1])) : 16;
 		mazeGen3 maze = new mazeGen3(x, y);
 		maze.display();
 	}
