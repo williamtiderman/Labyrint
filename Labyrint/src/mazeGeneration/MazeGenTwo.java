@@ -126,10 +126,18 @@ public class MazeGenTwo {
         // reached Ending
         if (x == n && y == n) done = true;
 
-        if (!north[x][y]) solve(x, y + 1);
-        if (!east[x][y])  solve(x + 1, y);
-        if (!south[x][y]) solve(x, y - 1);
-        if (!west[x][y])  solve(x - 1, y);
+        if (!north[x][y]) {
+        	solve(x, y + 1);
+        }
+        if (!east[x][y]) {
+        	solve(x + 1, y);
+        }
+        if (!south[x][y]) {
+        	solve(x, y - 1);
+        }
+        if (!west[x][y]) {
+        	solve(x - 1, y);
+        }
 
         if (done) return;
 
