@@ -33,7 +33,7 @@ public class MazeSolveOne {
         StdDraw.filledCircle(x + 0.5, y + 0.5, 0.25);
         StdDraw.show();
 
-        //StdDraw.pause(30);fsad
+        StdDraw.pause(10);
 
 
         // reached Ending
