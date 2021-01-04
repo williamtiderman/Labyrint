@@ -2,7 +2,7 @@ package mazeGeneration;
 
 import java.util.Random;
 
-public class MazeGenOne {
+public class MazeGenOne implements MazeGeneration {
 	private int n;                 // dimension of maze
     private boolean[][] north;     // is there a wall to north of cell i, j
     private boolean[][] east;
@@ -18,6 +18,13 @@ public class MazeGenOne {
         StdDraw.setYscale(0, n+2);
         init();
         generate();
+    }
+    
+    public int getN() {
+    	return this.n;
+    }
+    public boolean[][] getNorth(){
+    	return this.north;
     }
     
     private void init() {

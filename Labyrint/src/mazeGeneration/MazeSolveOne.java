@@ -12,8 +12,8 @@ public class MazeSolveOne {
 	private boolean[][] visited;
 	private boolean done = false;
 	
-	public MazeSolveOne(int x, int y){
-		this.x = x;
+	public MazeSolveOne(MazeGeneration mazeGen){
+		this.n = mazeGen.n;
 		this.y = y;
 		solve(x,y);
 	}
