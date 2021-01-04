@@ -119,7 +119,7 @@ public class MazeGenTwo {
         StdDraw.setPenColor(StdDraw.BLUE);
         StdDraw.filledCircle(x + 0.5, y + 0.5, 0.25);
         StdDraw.show();
-        StdDraw.pause(30);
+        //StdDraw.pause(30);
 
         // reached Ending
         if (x == n && y == n) done = true;
@@ -135,7 +135,7 @@ public class MazeGenTwo {
         StdDraw.filledCircle(x + 0.5, y + 0.5, 0.25);
         StdDraw.show();
         System.out.println("Fel Väg");
-        StdDraw.pause(20);
+        //StdDraw.pause(5);
     }
 
     // solve the maze starting from the start state
@@ -170,7 +170,7 @@ public class MazeGenTwo {
 
     // a test client
     public static void main(String[] args) {
-        int n = 32;
+        int n = 100;
         MazeGenTwo maze = new MazeGenTwo(n);
         StdDraw.enableDoubleBuffering();
         maze.draw();
