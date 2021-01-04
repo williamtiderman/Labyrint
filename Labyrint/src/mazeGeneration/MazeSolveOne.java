@@ -13,8 +13,8 @@ public class MazeSolveOne {
 	private boolean done = false;
 	
 	public MazeSolveOne(MazeGeneration mazeGen){
-		this.n = mazeGen.n;
-		this.y = y;
+		this.n = mazeGen.getN();
+		
 		solve(x,y);
 	}
 	

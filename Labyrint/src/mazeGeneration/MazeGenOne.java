@@ -20,12 +20,38 @@ public class MazeGenOne implements MazeGeneration {
         generate();
     }
     
+    @Override
     public int getN() {
     	return this.n;
     }
+    @Override
     public boolean[][] getNorth(){
     	return this.north;
     }
+    @Override
+    public boolean[][] getEast(){
+    	return this.east;
+    }
+    @Override
+    public boolean[][] getWest(){
+    	return this.west;
+    }
+    @Override
+    public boolean[][] getSouth(){
+    	return this.south;
+    }
+	@Override
+	public boolean[][] getVisited() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean getDone() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+    
     
     private void init() {
         // initialize border cells as already visited
@@ -112,4 +138,6 @@ public class MazeGenOne implements MazeGeneration {
         StdDraw.show();
         StdDraw.pause(1000);
     }
+
+
 }
