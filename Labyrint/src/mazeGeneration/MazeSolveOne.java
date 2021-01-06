@@ -14,6 +14,11 @@ public class MazeSolveOne {
 	
 	public MazeSolveOne(MazeGeneration mazeGen){
 		this.n = mazeGen.getN();
+		this.north = mazeGen.getNorth();
+		this.east = mazeGen.getEast();
+		this.west = mazeGen.getWest();
+		this.south = mazeGen.getSouth();
+		this.visited = mazeGen.getVisited();
 		
 		solve(x,y);
 	}
