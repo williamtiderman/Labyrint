@@ -198,7 +198,7 @@ public class MazeGenRecBack {
 			
 			
 			if(lastNode.getX() == startNode.getX() && lastNode.getY() == startNode.getY()){
-				System.out.println("Klart!!!");
+				System.out.println("Klart!!!!");
 			}
 			else{
 				System.out.println("Backara");
