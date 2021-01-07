@@ -1,7 +1,7 @@
 package mazeGeneration;
 import java.util.Random;
 
-public class MazeGenTwo {
+public class Princeton {
     private int n;                 // dimension of maze
     private boolean[][] north;     // is there a wall to north of cell i, j
     private boolean[][] east;
@@ -10,7 +10,7 @@ public class MazeGenTwo {
     private boolean[][] visited;
     private boolean done = false;
 
-    public MazeGenTwo(int n) {
+    public Princeton(int n) {
         this.n = n;
         StdDraw.setXscale(0, n+2);
         StdDraw.setYscale(0, n+2);
@@ -178,7 +178,7 @@ public class MazeGenTwo {
     // a test client
     public static void main(String[] args) {
         int n = 100;
-        MazeGenTwo maze = new MazeGenTwo(n);
+        Princeton maze = new Princeton(n);
         StdDraw.enableDoubleBuffering();
         maze.draw();
         maze.solve();
