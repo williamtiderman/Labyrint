@@ -9,10 +9,17 @@ public class Main {
 		MazeGenRecBack maze = new MazeGenRecBack(n);
         StdDraw.enableDoubleBuffering();
         maze.draw();
+<<<<<<< HEAD
         System.out.println("Wtf Men bra");
         //MazeSolveOne mazeSolver = new MazeSolveOne(maze);
         
         //mazeSolver.solve();
+=======
+        MazeSolveOne mazeSolver = new MazeSolveOne(maze);
+        MazeSolveTwo2nd mazeSolver2 = new MazeSolveTwo2nd(maze);
+        mazeSolver.solve();
+        mazeSolver2.solve();
+>>>>>>> branch 'master' of https://github.com/williamtiderman/Labyrint
 	}
 
 }

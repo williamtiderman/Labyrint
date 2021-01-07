@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Stack;
 
+
 public class MazeGenRecBack {
 
 	private int n;                 // dimension of maze
@@ -68,7 +69,6 @@ public class MazeGenRecBack {
 		generate(1,1);
 		
 	}
-	
 	private void init() {
         // initialize border cells as already visited
 		
@@ -93,6 +93,10 @@ public class MazeGenRecBack {
 				visited.get(i).add(false);
 			}
 		}
+	}
+	
+	public void generate(int x, int y) {
+		Stack<MazeNode> mazeStack = new Stack<MazeNode>();
 		
 		
         for (int x = 0; x < n+2; x++) {
