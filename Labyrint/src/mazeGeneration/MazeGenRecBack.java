@@ -1,5 +1,7 @@
 package mazeGeneration;
 
+import java.util.Stack;
+
 public class MazeGenRecBack implements MazeGeneration {
 
 	private int n;                 // dimension of maze
@@ -59,7 +61,7 @@ public class MazeGenRecBack implements MazeGeneration {
 	
 	@Override
 	public void generate(int x, int y) {
-		Stack <>
+		Stack<mazeNode> mazeStack = new Stack<mazeNode>;
 		
 		
 	}
