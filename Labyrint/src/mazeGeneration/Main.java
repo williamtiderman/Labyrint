@@ -9,8 +9,9 @@ public class Main {
         StdDraw.enableDoubleBuffering();
         maze.draw();
         MazeSolveOne mazeSolver = new MazeSolveOne(maze);
-        
+        MazeSolveTwo2nd mazeSolver2 = new MazeSolveTwo2nd(maze);
         mazeSolver.solve();
+        mazeSolver2.solve();
 	}
 
 }

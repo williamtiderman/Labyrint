@@ -21,44 +21,52 @@ public class MazeSolveTwo2nd {
 		this.south = mazeGen.getSouth();
 		this.visited = mazeGen.getVisited();
 	}
-	int maxY = n - 1;
-	int maxX = n - 1;
+	private void solve(int x, int y) {
+		int maxY = n - 1;
+		int maxX = n - 1;
 
-	Deque<int[]> stack = new ArrayDeque<>();
-	int x = 0;
-	int y = 0;
+		Deque<int[]> stack = new ArrayDeque<>();
 
-	while (true) {
-		if (x == maxX && y == maxY) {
-			// Found the exit!
+		while (visited == false) {
+			if (x == maxX && y == maxY) {
+				// Found the exit!
+				System.out.println("Klart");
 
-		} else if (x + 1 <= maxX && east[y][x + 1]) {
-			// Try moving right
-			stack.push(new int[]{x + 1, y});
-			x++;
+			} else if (x + 1 <= maxX && east[y][x + 1]) {
+				// Try moving right
+				stack.push(new int[]{x + 1, y});
+				x++;
+			}
+			else if (x + 1 <= maxX && west[y][x - 1]) {
+				// Try moving left
+				stack.push(new int[]{x - 1, y});
+				x--;
+			}
+			else if (x - 1 <= maxX && north[y][x - 1]) {
+				// Try moving up
+				stack.push(new int[]{x, y - 1});
+				y--;
+			}else if (y + 1 <= maxY && south[y + 1][x]) {
+				// Try moving down
+				stack.push(new int[]{x, y + 1});
+				y++;
+			}else if (!stack.isEmpty()) {
+				// Mark as dead end (so we will not try to reach here again)
+				//maze[y][x] = false;
+				int[] current = stack.pop();
+				x = current[0];
+				y = current[1];
+			} else {
+				// No way to go -> impossible to reach the exit
+
+			}
 		}
-		else if (x + 1 <= maxX && west[y][x - 1]) {
-			// Try moving right
-			stack.push(new int[]{x - 1, y});
-			x--;
-		}
-		else if (x - 1 <= maxX && north[y][x - 1]) {
-			// Try moving right
-			stack.push(new int[]{x, y - 1});
-			y--;
-		}else if (y + 1 <= maxY && south[y + 1][x]) {
-			// Try moving down
-			stack.push(new int[]{x, y + 1});
-			y++;
-		} else if (!stack.isEmpty()) {
-			// Mark as dead end (so we will not try to reach here again)
-			//maze[y][x] = false;
-			int[] current = stack.pop();
-			x = current[0];
-			y = current[1];
-		} else {
-			// No way to go -> impossible to reach the exit
-
-		}
+	}
+	public void solve() {
+		for (int x = 1; x <= n; x++)
+            for (int y = 1; y <= n; y++)
+                visited[x][y] = false;
+		done = false;
+		solve(1,1);
 	}
 }
