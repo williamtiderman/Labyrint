@@ -9,5 +9,7 @@ public interface MazeGeneration {
 	public boolean[][] getSouth();
 	public boolean[][] getVisited();
 	int getN();
+	public void generate();
+	public void generate(int x, int y);
 	
 }

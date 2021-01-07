@@ -75,7 +75,7 @@ public class MazeGenOne implements MazeGeneration {
         }
     }
 	// generate the maze
-    private void generate(int x, int y) {
+    public void generate(int x, int y) {
         visited[x][y] = true;
 
         // while there is an unvisited neighbor
@@ -112,7 +112,7 @@ public class MazeGenOne implements MazeGeneration {
             }
         }
     }
-    private void generate() {
+    public void generate() {
         generate(1, 1);
     }
     public void draw() {
