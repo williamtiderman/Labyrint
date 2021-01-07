@@ -201,7 +201,7 @@ public class MazeGenRecBack {
 				System.out.println("Klart!!!");
 			}
 			else{
-				System.out.println("Backar");
+				System.out.println("Backara");
 				generate(lastNode.getX(),lastNode.getY());
 			}
 			System.out.println("Wtf denna rad ska inte kunna hända");
