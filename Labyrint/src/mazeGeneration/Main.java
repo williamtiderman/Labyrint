@@ -4,13 +4,15 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int n = 50;
-        MazeGeneration maze = new MazeGenOne(n);
+		int n = 20;
+        //MazeGeneration maze = new MazeGenOne(n);
+		MazeGenRecBack maze = new MazeGenRecBack(n);
         StdDraw.enableDoubleBuffering();
         maze.draw();
-        MazeSolveOne mazeSolver = new MazeSolveOne(maze);
+        System.out.println("Wtf Men bra");
+        //MazeSolveOne mazeSolver = new MazeSolveOne(maze);
         
-        mazeSolver.solve();
+        //mazeSolver.solve();
 	}
 
 }

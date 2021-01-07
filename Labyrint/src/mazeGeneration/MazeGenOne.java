@@ -1,5 +1,6 @@
 package mazeGeneration;
 
+import java.util.List;
 import java.util.Random;
 
 public class MazeGenOne implements MazeGeneration {
@@ -24,23 +25,23 @@ public class MazeGenOne implements MazeGeneration {
     public int getN() {
     	return this.n;
     }
-    @Override
+    
     public boolean[][] getNorth(){
     	return this.north;
     }
-    @Override
+    
     public boolean[][] getEast(){
     	return this.east;
     }
-    @Override
+   
     public boolean[][] getWest(){
     	return this.west;
     }
-    @Override
+    
     public boolean[][] getSouth(){
     	return this.south;
     }
-	@Override
+	
 	public boolean[][] getVisited() {
 		// TODO Auto-generated method stub
 		return this.visited;
@@ -132,6 +133,12 @@ public class MazeGenOne implements MazeGeneration {
         StdDraw.show();
         StdDraw.pause(1000);
     }
+
+	@Override
+	public List<MazeNode> getMazeList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 }
