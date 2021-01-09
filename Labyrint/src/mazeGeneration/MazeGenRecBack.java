@@ -112,7 +112,7 @@ public class MazeGenRecBack implements MazeGeneration{
 		int randX = rand.nextInt(n-1) +1;
 		int randY = rand.nextInt(n-1) +1;
 
-		startNode = new MazeNode(1, 1);
+		startNode = new MazeNode(randX, randY);
 
 		generate(randX,randY);
 
