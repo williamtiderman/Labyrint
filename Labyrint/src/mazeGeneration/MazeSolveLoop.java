@@ -3,7 +3,7 @@ package mazeGeneration;
 import java.util.List;
 import java.util.Stack;
 
-public class MazeSolveTwo2nd {
+public class MazeSolveLoop {
 
 	private int n;
 	private List<List<Boolean>> north;     // is there a wall to north of cell i, j
@@ -15,7 +15,7 @@ public class MazeSolveTwo2nd {
 	private int count = 0;
 	Stack<MazeNode> stack;
 
-	public MazeSolveTwo2nd(MazeGeneration mazeGen) {
+	public MazeSolveLoop(MazeGeneration mazeGen) {
 		this.n = mazeGen.getN();
 		this.north = mazeGen.getNorth();
 		this.east = mazeGen.getEast();

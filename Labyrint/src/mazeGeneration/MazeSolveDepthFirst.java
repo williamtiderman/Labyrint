@@ -2,7 +2,7 @@ package mazeGeneration;
 
 import java.util.List;
 
-public class MazeSolveOne {
+public class MazeSolveDepthFirst {
 	
 	private int n;   // dimension of maze
 	private int x;
@@ -14,7 +14,7 @@ public class MazeSolveOne {
 	private List<List<Boolean>> visited;
 	private boolean done = false;
 	
-	public MazeSolveOne(MazeGeneration mazeGen){
+	public MazeSolveDepthFirst(MazeGeneration mazeGen){
 		this.n = mazeGen.getN();
 		this.north = mazeGen.getNorth();
 		this.east = mazeGen.getEast();

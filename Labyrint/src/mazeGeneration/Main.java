@@ -12,7 +12,7 @@ public class Main {
         StdDraw.enableDoubleBuffering();
        
         //MazeSolveOne mazeSolver = new MazeSolveOne(maze);
-        MazeSolveTwo2nd mazeSolver = new MazeSolveTwo2nd(maze);
+        MazeSolveLoop mazeSolver = new MazeSolveLoop(maze);
         
         mazeSolver.solve();
         
