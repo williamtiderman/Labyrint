@@ -55,6 +55,11 @@ public class MazeGenSideWind implements MazeGeneration {
 		return this.n;
 	}
 
+	/**
+	 * Skapar layout för labyrint
+	 * 
+	 * @param n dimension för kvadraten av labyrinten
+	 */
 	public MazeGenSideWind(int n) {
 		this.n = n;
 		StdDraw.setXscale(0, n+2);
@@ -63,6 +68,9 @@ public class MazeGenSideWind implements MazeGeneration {
 		generate();
 	}
 
+	/**
+	 * Ritar start/slut punkt samt väggar i labyrinten
+	 */
 	@Override
 	public void draw() {
 		StdDraw.clear();
@@ -85,10 +93,8 @@ public class MazeGenSideWind implements MazeGeneration {
 
 	}
 
-
+	//init
 	private void init() {
-		// initialize border cells as already visited
-
 		north = new ArrayList<List<Boolean>>();
 		east = new ArrayList<List<Boolean>>();
 		west = new ArrayList<List<Boolean>>();
@@ -113,8 +119,6 @@ public class MazeGenSideWind implements MazeGeneration {
 			}
 		}	
 	}
-
-
 	@Override
 	public void generate() {
 
@@ -146,15 +150,12 @@ public class MazeGenSideWind implements MazeGeneration {
 
 	@Override
 	public void generate(int x, int y) {
-
-
 		if(!done) {
 			if(y == 0)
 			{
 				done = true;
 				return;
 			}
-
 			if(x == n+1 || x == n) {
 
 				if(currentSet.size() == 0){
@@ -178,6 +179,11 @@ public class MazeGenSideWind implements MazeGeneration {
 			}
 		}
 	}
+	/**
+	 * Randomizar och den ska gå åt höger eller uppåt
+	 * 
+	 * @return boolean för höger eller upp
+	 */
 	public boolean goOrStop() {
 
 		Random random = new Random();
@@ -190,7 +196,12 @@ public class MazeGenSideWind implements MazeGeneration {
 			return false;
 		}
 	}
-
+	/**
+	 * Skär väggen till höger och kallar rekursivt på generate igen
+	 * 
+	 * @param x värdet på x koordinaten
+	 * @param y värdet på y koordinaten
+	 */
 	public void carveEast(int x, int y) {
 		MazeNode currentNode = new MazeNode(x,y);
 		currentSet.add(currentNode);
@@ -198,6 +209,12 @@ public class MazeGenSideWind implements MazeGeneration {
 		west.get(x+1).set(y, false);
 		generate(x+1,y);
 	}
+	/**
+	 * Skär väggen till höger och kallar rekursivt på generate igen
+	 * 
+	 * @param x värdet på x koordinaten
+	 * @param y värdet på y koordinaten
+	 */
 	public void carveNorth(int x, int y) {
 
 		Random random = new Random();
