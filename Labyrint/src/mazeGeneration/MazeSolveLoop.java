@@ -16,7 +16,6 @@ public class MazeSolveLoop implements MazeSolver {
 	private List<List<Boolean>> west;
 	private List<List<Boolean>> visited;
 	private boolean done = false;
-	private int count = 0;
 	Stack<MazeNode> stack;
 
 	public MazeSolveLoop(MazeGeneration mazeGen) {
@@ -40,7 +39,6 @@ public class MazeSolveLoop implements MazeSolver {
 		stack.push(startNode);
 
 		while (true) {
-			count++;
 			draw(true,x,y);
 			
 			if (x == n && y == n) {
