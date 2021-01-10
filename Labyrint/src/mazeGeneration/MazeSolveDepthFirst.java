@@ -1,5 +1,9 @@
 package mazeGeneration;
-
+/**
+ * @author William Tiderman
+ * @author John Engblom Sandin
+ * @version 2021-01-10
+ */
 import java.util.List;
 
 public class MazeSolveDepthFirst implements MazeSolver {

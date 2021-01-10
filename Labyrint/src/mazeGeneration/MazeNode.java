@@ -1,5 +1,9 @@
 package mazeGeneration;
-
+/**
+ * @author William Tiderman
+ * @author John Engblom Sandin
+ * @version 2021-01-10
+ */
 public class MazeNode {
 	private int x;
 	private int y;
@@ -30,13 +34,6 @@ public class MazeNode {
 	public MazeNode(int x, int y) {
 		this.x = x;
 		this.y = y;
-	}
-	
-	public MazeNode(int x, int y,int endX, int endY) {
-		this.x = x;
-		this.y = y;
-		this.setEndX(endX);
-		this.setEndY(endY);
 	}
 	
 	public boolean isNorth() {

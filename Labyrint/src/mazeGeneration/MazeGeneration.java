@@ -1,7 +1,15 @@
 package mazeGeneration;
-
+/**
+ * @author William Tiderman
+ * @author John Engblom Sandin
+ * @version 2021-01-10
+ */
 import java.util.List;
 
+/**
+ * Interface för skapning av labyrint. 
+ *
+ */
 public interface MazeGeneration {
 	
 	public void draw();

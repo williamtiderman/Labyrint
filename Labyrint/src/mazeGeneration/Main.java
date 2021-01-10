@@ -1,9 +1,19 @@
 package mazeGeneration;
+/**
+ * @author William Tiderman
 
+ * @author John Engblom Sandin
+ * @version 2021-01-10
+ */
 import java.util.Scanner;
 
 public class Main {
 
+	/**
+	 * Frågar användaren om vilken labyrint och lösningsalgoritm som ska köras.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		MazeGeneration maze = null;
 		MazeSolver mazeSolver = null;

@@ -1,5 +1,9 @@
 package mazeGeneration;
-
+/**
+ * @author William Tiderman
+ * @author John Engblom Sandin
+ * @version 2021-01-10
+ */
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -18,6 +22,11 @@ public class MazeGenRecBack implements MazeGeneration{
 	MazeNode startNode;
 
 
+	/**
+	 * Ritar ut en röd cirkel för startpunk och slutpunkt samt skapar labyrintens väggar
+	 * 
+	 * @param currentNode, hämtar värdet för vilket X och Y som är noden för alla riktningar 
+	 */
 	public void draw(MazeNode currentNode) {
 		StdDraw.setPenColor(StdDraw.RED);
 		StdDraw.filledCircle(n + 0.5, n + 0.5, 0.375);
@@ -31,7 +40,9 @@ public class MazeGenRecBack implements MazeGeneration{
 		if (east.get(currentNode.getX()).get(currentNode.getY()))  StdDraw.line(currentNode.getX()+1, currentNode.getY(), currentNode.getX()+1, currentNode.getY()+1);
 	}
 
-
+	/**
+	 * Ritar ut röd cirkel för slut och starpunkt samt ritar labyrintens väggar ut
+	 */
 	public void draw(){
 		StdDraw.clear();
 		StdDraw.setPenColor(StdDraw.RED);
@@ -70,9 +81,8 @@ public class MazeGenRecBack implements MazeGeneration{
 		return n;
 	}
 
+	// init för border cells
 	private void init() {
-		// initialize border cells as already visited
-
 		north = new ArrayList<List<Boolean>>();
 		east = new ArrayList<List<Boolean>>();
 		west = new ArrayList<List<Boolean>>();
@@ -96,6 +106,9 @@ public class MazeGenRecBack implements MazeGeneration{
 		}
 	}
 
+	/** 
+	 * Generar labyrinten
+	 */
 	public void generate() {
 		mazeStack = new Stack<MazeNode>();
 
@@ -127,7 +140,12 @@ public class MazeGenRecBack implements MazeGeneration{
 		generate();
 	}
 
-
+	/**
+	 * Generar labyrint med hjälp av rekursiv backtracking
+	 * 
+	 * @param x, värdet för x axeln
+	 * @param y, värdet för y axeln
+	 */
 	public void generate(int x, int y) {
 		MazeNode currentNode = new MazeNode(x,y);
 		
