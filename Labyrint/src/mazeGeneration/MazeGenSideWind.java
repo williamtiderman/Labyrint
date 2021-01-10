@@ -157,13 +157,10 @@ public class MazeGenSideWind implements MazeGeneration {
 					north.get(x).set(y, false);
 					south.get(x).set(y+1, false);
 					generate(1,y-1);
-
 				}
 				else {
 					carveNorth(x,y);
 				}
-
-
 			}
 			else {
 				boolean goEast = goOrStop();
@@ -175,15 +172,8 @@ public class MazeGenSideWind implements MazeGeneration {
 					carveNorth(x,y);
 				}
 			}
-
 		}
-		
-
-
-
-
 	}
-
 	public boolean goOrStop() {
 
 		Random random = new Random();
