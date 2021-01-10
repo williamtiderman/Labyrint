@@ -16,8 +16,11 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner choose = new Scanner(System.in);
 		System.out.println("Vilken labyrint generator vill du ha? "
-				+ "Rekursiv eller Sidewind, R för Rekursiv och S för Sidewind");
+				+ "Rekursiv eller Sidewind, R för Rekursiv och S för Sidewind. Annars skriv I om du vill importa från textfil");
 		String yesNo = choose.nextLine();
+		
+		
+		
 		System.out.println("Hur stor ska labyrinten vara(Skriv en sida för kvadranten)");
 		String size = choose.nextLine();
 		

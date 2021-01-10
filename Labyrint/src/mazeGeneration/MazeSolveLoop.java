@@ -41,13 +41,11 @@ public class MazeSolveLoop implements MazeSolver {
 
 		while (true) {
 			count++;
-			
 			draw(true,x,y);
 			
 			if (x == n && y == n) {
 				// Found the exit!
 				done = true;
-
 			} 
 			else if (x + 1 <= n && !east.get(x).get(y) && !visited.get(x+1).get(y)) {
 				// Try moving right
@@ -80,7 +78,6 @@ public class MazeSolveLoop implements MazeSolver {
 			else if (!stack.isEmpty()) {
 				// Mark as dead end (so we will not try to reach here again)
 				// = false;
-
 				visited.get(x).set(y,true);
 				draw(false,x,y);
 
@@ -91,9 +88,7 @@ public class MazeSolveLoop implements MazeSolver {
 			else {
 				// No way to go -> impossible to reach the exit
 				break;
-
 			}
-
 			if (done) return;
 		}
 	}

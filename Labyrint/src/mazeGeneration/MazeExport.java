@@ -31,7 +31,8 @@ public class MazeExport {
 		this.south = maze.getSouth();
 		try {
 			String outPrint = "Första två siffrorna är koordinater sedan true eller false om det finns en vägg i riktningen Norr,Öst,Söder,Västerut \n";
-
+			outPrint += String.valueOf(n)+ "\n";
+			
 			for(int i = 1; i <= n;i++){
 				for(int j = 1; j <= n; j++){
 
