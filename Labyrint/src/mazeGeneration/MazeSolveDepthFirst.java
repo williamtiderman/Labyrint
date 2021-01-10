@@ -9,8 +9,6 @@ import java.util.List;
 public class MazeSolveDepthFirst implements MazeSolver {
 	
 	private int n;   // dimension of maze
-	private int x;
-	private int y;
 	private List<List<Boolean>> north;
 	private List<List<Boolean>> east;
 	private List<List<Boolean>> west;
@@ -27,10 +25,9 @@ public class MazeSolveDepthFirst implements MazeSolver {
 		this.visited = mazeGen.getVisited();
 		
 		
-		//solve(x,y);
 	}
 	
-    // solve the maze using depth-first search
+    // Rekursiv metod för att lösa labyrinten med hjälp av en depth-first algoritm
     public void solve(int x, int y) {
     	
         if (x == 0 || y == 0 || x == n+1 || y == n+1) {
@@ -72,7 +69,7 @@ public class MazeSolveDepthFirst implements MazeSolver {
         StdDraw.pause(20);
     }
 
-    // solve the maze starting from the start state
+    // Kallar på solve metoden från startpunkten.
     public void solve() {
         for (int x = 1; x <= n; x++)
             for (int y = 1; y <= n; y++)
