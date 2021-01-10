@@ -1,5 +1,9 @@
 package mazeGeneration;
-
+/**
+ * @author William Tiderman
+ * @author John Engblom Sandin
+ * @version 2021-01-10
+ */
 public class MazeNode {
 	private int x;
 	private int y;
