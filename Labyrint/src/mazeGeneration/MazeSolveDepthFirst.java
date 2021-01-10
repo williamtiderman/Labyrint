@@ -2,7 +2,7 @@ package mazeGeneration;
 
 import java.util.List;
 
-public class MazeSolveDepthFirst {
+public class MazeSolveDepthFirst implements MazeSolver {
 	
 	private int n;   // dimension of maze
 	private int x;
@@ -27,7 +27,7 @@ public class MazeSolveDepthFirst {
 	}
 	
     // solve the maze using depth-first search
-    private void solve(int x, int y) {
+    public void solve(int x, int y) {
     	
         if (x == 0 || y == 0 || x == n+1 || y == n+1) {
         	return;
