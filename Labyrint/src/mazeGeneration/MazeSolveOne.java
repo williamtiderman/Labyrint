@@ -22,13 +22,26 @@ public class MazeSolveOne {
 		this.south = mazeGen.getSouth();
 		this.visited = mazeGen.getVisited();
 		
-		solve(x,y);
+		System.out.println("Maze hittad och hämtad");
+		
+		//solve(x,y);
 	}
 	
     // solve the maze using depth-first search
     private void solve(int x, int y) {
-        if (x == 0 || y == 0 || x == n+1 || y == n+1) return;
-        if (done || visited.get(x).get(y)) return;
+    	
+    	System.out.println(x + " " + y);
+        if (x == 0 || y == 0 || x == n+1 || y == n+1) {
+        	System.out.println(x + " " + y + "FEL");
+        	System.out.println("Returnerade 1");
+        	return;
+        	
+        }
+        	
+        if (done || visited.get(x).get(y)) {
+        	System.out.println("Returnerade 2");
+        	return;
+        }
         visited.get(x).set(y,true);
 
         StdDraw.setPenColor(StdDraw.BLUE);
@@ -53,7 +66,7 @@ public class MazeSolveOne {
         	solve(x - 1, y);
         }
        
-
+        System.out.println(done);
         if (done) return;
 
         StdDraw.setPenColor(StdDraw.GRAY);
