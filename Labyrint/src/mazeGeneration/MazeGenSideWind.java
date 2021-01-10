@@ -48,8 +48,7 @@ public class MazeGenSideWind implements MazeGeneration {
 
 	@Override
 	public int getN() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.n;
 	}
 
 	public MazeGenSideWind(int n) {
@@ -125,9 +124,6 @@ public class MazeGenSideWind implements MazeGeneration {
 		}
 		
 
-
-		draw();
-
 		east.get(1).set(n, false);
 
 		for(int i = 2; i < n; i++) {
@@ -136,8 +132,6 @@ public class MazeGenSideWind implements MazeGeneration {
 		}
 
 		west.get(n).set(n, false);
-
-		draw();
 
 		generate(1,n-1);
 
@@ -149,7 +143,6 @@ public class MazeGenSideWind implements MazeGeneration {
 	@Override
 	public void generate(int x, int y) {
 
-		draw();
 
 		if(!done) {
 			if(y == 0)
@@ -163,12 +156,10 @@ public class MazeGenSideWind implements MazeGeneration {
 				if(currentSet.size() == 0){
 					north.get(x).set(y, false);
 					south.get(x).set(y+1, false);
-					System.out.println("Ny rad " + x + " " + y);
 					generate(1,y-1);
 
 				}
 				else {
-					System.out.println("Ny rad " + x + " " + y);
 					carveNorth(x,y);
 				}
 
@@ -178,11 +169,9 @@ public class MazeGenSideWind implements MazeGeneration {
 				boolean goEast = goOrStop();
 
 				if(currentSet.size() == 0 || goEast) {
-					System.out.println("east " + x + " " + y);
 					carveEast(x,y);
 				}
 				else{
-					System.out.println("north " + x + " " + y);
 					carveNorth(x,y);
 				}
 			}
@@ -198,9 +187,9 @@ public class MazeGenSideWind implements MazeGeneration {
 	public boolean goOrStop() {
 
 		Random random = new Random();
-		int ifgo = random.nextInt(3-1)+1;
+		int ifgo = random.nextInt(4-1)+1;
 
-		if(ifgo == 1) {
+		if(ifgo < 3) {
 			return true;
 		}
 		else {
