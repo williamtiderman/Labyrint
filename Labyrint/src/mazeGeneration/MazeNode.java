@@ -36,13 +36,6 @@ public class MazeNode {
 		this.y = y;
 	}
 	
-	public MazeNode(int x, int y,int endX, int endY) {
-		this.x = x;
-		this.y = y;
-		this.setEndX(endX);
-		this.setEndY(endY);
-	}
-	
 	public boolean isNorth() {
 		return north;
 	}

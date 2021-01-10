@@ -44,40 +44,39 @@ public class MazeSolveLoop implements MazeSolver {
 			draw(true,x,y);
 			
 			if (x == n && y == n) {
-				// Found the exit!
+				// Hittade slutpunkten
 				done = true;
 			} 
 			else if (x + 1 <= n && !east.get(x).get(y) && !visited.get(x+1).get(y)) {
-				// Try moving right
+				// Försöker flytta höger
 				MazeNode nextNode = new MazeNode(x+1,y);
 				visited.get(x).set(y,true);
 				stack.push(nextNode);
 				x++;
 			}
 			else if (y + 1 <= n && !north.get(x).get(y) && !visited.get(x).get(y+1)) {
-				// Try moving up
+				// Försöker flytta up
 				MazeNode nextNode = new MazeNode(x,y+1);
 				visited.get(x).set(y,true);
 				stack.push(nextNode);
 				y++;
 			}
 			else if (x - 1 > 0 && !west.get(x).get(y) && !visited.get(x-1).get(y)) {
-				// Try moving left
+				// Försöker flytta vänster
 				MazeNode nextNode = new MazeNode(x-1,y);
 				visited.get(x).set(y,true);
 				stack.push(nextNode);
 				x--;
 			}
 			else if (y - 1 > 0 && !south.get(x).get(y) && !visited.get(x).get(y-1)) {
-				// Try moving down
+				// Försöker flytta nedåt
 				MazeNode nextNode = new MazeNode(x,y-1);
 				visited.get(x).set(y,true);
 				stack.push(nextNode);
 				y--;
 			}
 			else if (!stack.isEmpty()) {
-				// Mark as dead end (so we will not try to reach here again)
-				// = false;
+			
 				visited.get(x).set(y,true);
 				draw(false,x,y);
 
@@ -86,13 +85,19 @@ public class MazeSolveLoop implements MazeSolver {
 				y = lastNode.getY();
 			} 
 			else {
-				// No way to go -> impossible to reach the exit
+				// Ingen utväg hittades
 				break;
 			}
 			if (done) return;
 		}
 	}
-	
+	/**
+	 * Ritar ut en blå en grå cirkel på noden
+	 * 
+	 * @param blue ett sant/falskt värde för att veta vilken färg som ska ritas
+	 * @param x nodens x värde
+	 * @param y nodens y värde
+	 */
 	public void draw(boolean blue, int x, int y) {
 		if(blue) {
 			StdDraw.setPenColor(StdDraw.BLUE);
