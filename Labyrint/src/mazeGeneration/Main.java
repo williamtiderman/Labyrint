@@ -1,9 +1,18 @@
 package mazeGeneration;
-
+/**
+ * @author William Tiderman
+ * @author John Engblom Sandin
+ * @version 2021-01-10
+ */
 import java.util.Scanner;
 
 public class Main {
 
+	/**
+	 * Frågar användaren om vilken labyrint och lösningsalgoritm som ska köras.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Scanner choose = new Scanner(System.in);
 		System.out.println("Vilken labyrint generator vill du ha? "
@@ -15,7 +24,7 @@ public class Main {
 		MazeGeneration maze = null;
 		MazeSolver mazeSolver = null;
 		
-		
+		//Storlek på labyrinten
 		int n = 15;
 		try {
 			n = Integer.parseInt(size);

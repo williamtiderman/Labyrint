@@ -1,5 +1,9 @@
 package mazeGeneration;
-
+/**
+ * @author William Tiderman
+ * @author John Engblom Sandin
+ * @version 2021-01-10
+ */
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
@@ -11,6 +15,12 @@ public class MazeExport {
 	private List<List<Boolean>> west;
 	private List<List<Boolean>> south;
 	private int n;
+	
+	/**
+	 * Exporterar en labyrint till en textfil.
+	 * 
+	 * @param maze
+	 */
 
 	public MazeExport(MazeGeneration maze) {
 
