@@ -20,12 +20,12 @@ public class MazeExport {
 		this.west = maze.getWest();
 		this.south = maze.getSouth();
 		try {
-			String outPrint = "";
+			String outPrint = "Första två siffrorna är koordinater sedan true eller false om det finns en vägg i riktningen Norr,Öst,Söder,Västerut \n";
 
-			for(int i = 1; i < n;i++){
-				for(int j = 1; j < n; j++){
+			for(int i = 1; i <= n;i++){
+				for(int j = 1; j <= n; j++){
 
-					outPrint += i + "," + j + north.get(i).get(j) + " " + east.get(i).get(j) + " " + south.get(i).get(j) + " " + west.get(i).get(j) + "\n";
+					outPrint += i + "," + j + " " + north.get(i).get(j) + " " + east.get(i).get(j) + " " + south.get(i).get(j) + " " + west.get(i).get(j) + "\n";
 
 				}
 			}
@@ -33,10 +33,9 @@ public class MazeExport {
 			FileWriter myWriter = new FileWriter("MazeFile.txt");
 			myWriter.write(outPrint);
 			myWriter.close();
-			System.out.println("Successfully wrote to the file.");
 
 		} catch (IOException e) {
-			System.out.println("An error occurred.");
+			System.out.println("Det blev fel med skrivningen");
 			e.printStackTrace();
 		}
 	}

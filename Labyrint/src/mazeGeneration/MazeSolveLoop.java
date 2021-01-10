@@ -24,10 +24,6 @@ public class MazeSolveLoop implements MazeSolver {
 		this.visited = mazeGen.getVisited();
 	}
 	public void solve(int x, int y) {
-
-
-		System.out.println(x + " " + y);
-
 		stack = new Stack<MazeNode>();
 
 		StdDraw.setPenColor(StdDraw.BLUE);
@@ -41,21 +37,16 @@ public class MazeSolveLoop implements MazeSolver {
 
 		while (true) {
 			count++;
-			System.out.println(count);
-			System.out.println( x + " " + y);
 			
 			draw(true,x,y);
 			
 			if (x == n && y == n) {
 				// Found the exit!
-				System.out.println("Klart");
-				//reDraw();
 				done = true;
 
 			} 
 			else if (x + 1 <= n && !east.get(x).get(y) && !visited.get(x+1).get(y)) {
 				// Try moving right
-				System.out.println("Går åt höger");
 				MazeNode nextNode = new MazeNode(x+1,y);
 				visited.get(x).set(y,true);
 				stack.push(nextNode);
@@ -63,7 +54,6 @@ public class MazeSolveLoop implements MazeSolver {
 			}
 			else if (y + 1 <= n && !north.get(x).get(y) && !visited.get(x).get(y+1)) {
 				// Try moving up
-				System.out.println("Går Uppåt");
 				MazeNode nextNode = new MazeNode(x,y+1);
 				visited.get(x).set(y,true);
 				stack.push(nextNode);
@@ -71,7 +61,6 @@ public class MazeSolveLoop implements MazeSolver {
 			}
 			else if (x - 1 > 0 && !west.get(x).get(y) && !visited.get(x-1).get(y)) {
 				// Try moving left
-				System.out.println("Går åt Vänster");
 				MazeNode nextNode = new MazeNode(x-1,y);
 				visited.get(x).set(y,true);
 				stack.push(nextNode);
@@ -79,7 +68,6 @@ public class MazeSolveLoop implements MazeSolver {
 			}
 			else if (y - 1 > 0 && !south.get(x).get(y) && !visited.get(x).get(y-1)) {
 				// Try moving down
-				System.out.println("Går Neråt");
 				MazeNode nextNode = new MazeNode(x,y-1);
 				visited.get(x).set(y,true);
 				stack.push(nextNode);
@@ -89,7 +77,6 @@ public class MazeSolveLoop implements MazeSolver {
 				// Mark as dead end (so we will not try to reach here again)
 				// = false;
 
-				System.out.println("Backar");
 				visited.get(x).set(y,true);
 				draw(false,x,y);
 
@@ -99,7 +86,6 @@ public class MazeSolveLoop implements MazeSolver {
 			} 
 			else {
 				// No way to go -> impossible to reach the exit
-				System.out.println("Just gave up");
 				break;
 
 			}
@@ -121,16 +107,6 @@ public class MazeSolveLoop implements MazeSolver {
 		StdDraw.pause(20);
 	}
 	
-	/*public void reDraw()
-	{
-		StdDraw.clear();
-		for(int i = 0; i < stack.size();i++)
-		{
-			System.out.println("Redraw");
-			MazeNode poppedNode = stack.pop();
-			draw(true,poppedNode.getX(),poppedNode.getY());
-		}
-	}*/
 	
 	public void solve() {
 		for (int x = 1; x <= n; x++)
