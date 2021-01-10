@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class MazeImport implements MazeGeneration{
+public class MazeImport{
 
 	private int n;
 	private List<List<Boolean>> north;
@@ -20,8 +20,7 @@ public class MazeImport implements MazeGeneration{
 	private List<List<Boolean>> visited;
 	MazeGeneration maze = null;
 
-	public MazeImport(String filePath) {
-		maze = importMaze(filePath);
+	public MazeImport() {
 	}
 
 	public MazeGeneration importMaze(String filePath) {
@@ -89,7 +88,7 @@ public class MazeImport implements MazeGeneration{
 				maze.getSouth().get(x).set(y,Boolean.parseBoolean(dataReader.next()));
 				maze.getWest().get(x).set(y,Boolean.parseBoolean(dataReader.next()));
 				
-				String systemPrint = x + "," + y + " " + north.get(x).get(y) + " " + east.get(x).get(y) + " " + south.get(x).get(y) + " " + west.get(x).get(y) + "\n";
+				String systemPrint = x + "," + y + " " + north.get(x).get(y) + " " + east.get(x).get(y) + " " + south.get(x).get(y) + " " + west.get(x).get(y)+ visited.get(x).get(y) + "\n";
 				System.out.println(systemPrint);
 			}
 
@@ -99,8 +98,10 @@ public class MazeImport implements MazeGeneration{
 		return maze;
 	}
 
-	@Override
 	public void draw() {
+		
+		StdDraw.setXscale(0, n+2);
+		StdDraw.setYscale(0, n+2);
 		StdDraw.clear();
 		StdDraw.pause(10);
 
@@ -120,54 +121,4 @@ public class MazeImport implements MazeGeneration{
 		StdDraw.show();
 
 	}
-
-	@Override
-	public List<List<Boolean>> getNorth() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<List<Boolean>> getEast() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<List<Boolean>> getWest() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<List<Boolean>> getSouth() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getN() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void generate() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void generate(int x, int y) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public List<List<Boolean>> getVisited() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
 }

@@ -24,8 +24,6 @@ public class ImportedMaze implements MazeGeneration {
 		this.west = west;
 		this.visited = visited;
 		this.n = n;
-
-
 	}
 
 	@Override

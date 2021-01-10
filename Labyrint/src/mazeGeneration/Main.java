@@ -27,7 +27,9 @@ public class Main {
 			System.out.println("Skriv in den exakt sökvägen till textfilen");
 			String filePath = choose.nextLine();
 
-			maze = new MazeImport(filePath);
+			MazeImport mazeImport = new MazeImport();
+			
+			maze = mazeImport.importMaze(filePath);
 		}
 		else {
 			System.out.println("Hur stor ska labyrinten vara(Skriv en sida för kvadranten)");
@@ -53,12 +55,6 @@ public class Main {
 				System.out.println("Fel inmatning av val");
 			}
 		}
-
-
-
-
-
-
 
 		System.out.println("Labyrint klar, ska den lösas eller printas till textfil (L eller P)?");
 		String solveOrPrint = choose.nextLine();
