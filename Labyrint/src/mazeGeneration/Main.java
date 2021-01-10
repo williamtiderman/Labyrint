@@ -4,18 +4,18 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		int n = 36;
+		int n = 20;
 		
 		//MazeGeneration maze = new MazeGenSideWind(n);
-		MazeGeneration maze2 = new MazeGenRecBack(n);
+		MazeGeneration maze = new MazeGenRecBack(n);
 		
         StdDraw.enableDoubleBuffering();
        
         //MazeSolveOne mazeSolver = new MazeSolveOne(maze);
-        MazeSolveOne mazeSolver2 = new MazeSolveOne(maze2);
+        MazeSolveTwo2nd mazeSolver = new MazeSolveTwo2nd(maze);
         
-        mazeSolver2.solve();
-        //mazeSolver.solve();
+        mazeSolver.solve();
+        
 	}
 
 }
