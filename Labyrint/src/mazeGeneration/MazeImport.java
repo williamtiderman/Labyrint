@@ -12,6 +12,7 @@ import java.util.Scanner;
 
 public class MazeImport{
 
+	// 2-Dimensionella listor som säger om det finns en vägg åt ett håll från positionen
 	private int n;
 	private List<List<Boolean>> north;
 	private List<List<Boolean>> east;

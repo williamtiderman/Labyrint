@@ -10,6 +10,7 @@ import java.util.List;
 
 public class MazeExport {
 
+	// 2-Dimensionella listor som säger om det finns en vägg åt ett håll från positionen
 	private List<List<Boolean>> north;
 	private List<List<Boolean>> east;
 	private List<List<Boolean>> west;

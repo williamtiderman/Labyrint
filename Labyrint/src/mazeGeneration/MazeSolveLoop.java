@@ -9,8 +9,9 @@ import java.util.Stack;
 
 public class MazeSolveLoop implements MazeSolver {
 
+	// 2-Dimensionella listor som säger om det finns en vägg åt ett håll från positionen
 	private int n;
-	private List<List<Boolean>> north;     // is there a wall to north of cell i, j
+	private List<List<Boolean>> north;     
 	private List<List<Boolean>> east;
 	private List<List<Boolean>> south;
 	private List<List<Boolean>> west;
@@ -47,32 +48,33 @@ public class MazeSolveLoop implements MazeSolver {
 			} 
 			else if (x + 1 <= n && !east.get(x).get(y) && !visited.get(x+1).get(y)) {
 				// Försöker flytta höger
-				MazeNode nextNode = new MazeNode(x+1,y);
+				MazeNode thisNode = new MazeNode(x,y);
 				visited.get(x).set(y,true);
-				stack.push(nextNode);
+				stack.push(thisNode);
 				x++;
+			}
+			else if (y - 1 > 0 && !south.get(x).get(y) && !visited.get(x).get(y-1)) {
+				// Försöker flytta nedåt
+				MazeNode thisNode = new MazeNode(x,y);
+				visited.get(x).set(y,true);
+				stack.push(thisNode);
+				y--;
 			}
 			else if (y + 1 <= n && !north.get(x).get(y) && !visited.get(x).get(y+1)) {
 				// Försöker flytta up
-				MazeNode nextNode = new MazeNode(x,y+1);
+				MazeNode thisNode = new MazeNode(x,y);
 				visited.get(x).set(y,true);
-				stack.push(nextNode);
+				stack.push(thisNode);
 				y++;
 			}
 			else if (x - 1 > 0 && !west.get(x).get(y) && !visited.get(x-1).get(y)) {
 				// Försöker flytta vänster
-				MazeNode nextNode = new MazeNode(x-1,y);
+				MazeNode thisNode = new MazeNode(x,y);
 				visited.get(x).set(y,true);
-				stack.push(nextNode);
+				stack.push(thisNode);
 				x--;
 			}
-			else if (y - 1 > 0 && !south.get(x).get(y) && !visited.get(x).get(y-1)) {
-				// Försöker flytta nedåt
-				MazeNode nextNode = new MazeNode(x,y-1);
-				visited.get(x).set(y,true);
-				stack.push(nextNode);
-				y--;
-			}
+			
 			else if (!stack.isEmpty()) {
 			
 				visited.get(x).set(y,true);
@@ -98,7 +100,7 @@ public class MazeSolveLoop implements MazeSolver {
 	 */
 	public void draw(boolean blue, int x, int y) {
 		if(blue) {
-			StdDraw.setPenColor(StdDraw.BLUE);
+			StdDraw.setPenColor(StdDraw.GREEN);
 		}
 		else {
 			StdDraw.setPenColor(StdDraw.GRAY);

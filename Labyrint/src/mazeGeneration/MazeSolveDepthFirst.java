@@ -8,6 +8,7 @@ import java.util.List;
 
 public class MazeSolveDepthFirst implements MazeSolver {
 	
+	// 2-Dimensionella listor som säger om det finns en vägg åt ett håll från positionen
 	private int n;   // dimension of maze
 	private List<List<Boolean>> north;
 	private List<List<Boolean>> east;
@@ -39,7 +40,7 @@ public class MazeSolveDepthFirst implements MazeSolver {
         }
         visited.get(x).set(y,true);
 
-        StdDraw.setPenColor(StdDraw.BLUE);
+        StdDraw.setPenColor(StdDraw.GREEN);
         StdDraw.filledCircle(x + 0.5, y + 0.5, 0.25);
         StdDraw.show();
         StdDraw.pause(20);

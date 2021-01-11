@@ -12,7 +12,8 @@ import java.util.Stack;
 
 public class MazeGenRecBack implements MazeGeneration{
 
-	private int n;                 // dimension of maze
+	// 2-Dimensionella listor som säger om det finns en vägg åt ett håll från positionen
+	private int n;               
 	private List<List<Boolean>> north;
 	private List<List<Boolean>> east;
 	private List<List<Boolean>> west;
@@ -81,7 +82,7 @@ public class MazeGenRecBack implements MazeGeneration{
 		return n;
 	}
 
-	// init för border cells
+	// Initialisation för listorna och bestämma att alla väggar är uppe
 	private void init() {
 		north = new ArrayList<List<Boolean>>();
 		east = new ArrayList<List<Boolean>>();
@@ -149,7 +150,6 @@ public class MazeGenRecBack implements MazeGeneration{
 	public void generate(int x, int y) {
 		MazeNode currentNode = new MazeNode(x,y);
 		
-
 		visited.get(x).set(y, true);
 
 		if(!visited.get(x).get(y+1) || !visited.get(x).get(y-1) || !visited.get(x+1).get(y) || !visited.get(x-1).get(y)) {
@@ -160,6 +160,7 @@ public class MazeGenRecBack implements MazeGeneration{
 				int p = rand.nextInt(4);
 				if(p == 0 && !visited.get(x).get(y+1)) {
 
+					//Går uppåt
 					mazeStack.push(currentNode);
 					north.get(x).set(y, false);
 					south.get(x).set(y+1, false);
@@ -169,6 +170,7 @@ public class MazeGenRecBack implements MazeGeneration{
 				}
 				if(p == 1 && !visited.get(x).get(y-1)) {
 
+					//Går neråt
 					mazeStack.push(currentNode);
 					south.get(x).set(y, false);
 					north.get(x).set(y-1, false);
@@ -178,6 +180,7 @@ public class MazeGenRecBack implements MazeGeneration{
 				}
 				if(p == 2 && !visited.get(x+1).get(y)) {
 
+					//Går åt höger
 					mazeStack.push(currentNode);
 					east.get(x).set(y, false);
 					west.get(x+1).set(y, false);
@@ -187,6 +190,7 @@ public class MazeGenRecBack implements MazeGeneration{
 				}
 				if(p == 3 && !visited.get(x-1).get(y)) {
 
+					//Går åt vänster
 					mazeStack.push(currentNode);
 					west.get(x).set(y, false);
 					east.get(x-1).set(y, false);
@@ -198,6 +202,7 @@ public class MazeGenRecBack implements MazeGeneration{
 			MazeNode lastNode = mazeStack.pop();
 
 			if(lastNode.getX() == startNode.getX() && lastNode.getY() == startNode.getY()){
+				return;
 			}
 			else{
 				generate(lastNode.getX(),lastNode.getY());

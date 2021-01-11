@@ -10,8 +10,9 @@ import java.util.List;
 
 public class ImportedMaze implements MazeGeneration {
 
-	private int n;                 // dimension of maze
-	private List<List<Boolean>> north;
+	private int n;             
+	// 2-Dimensionella listor som säger om det finns en vägg åt ett håll från positionen
+	private List<List<Boolean>> north;			
 	private List<List<Boolean>> east;
 	private List<List<Boolean>> west;
 	private List<List<Boolean>> south;
