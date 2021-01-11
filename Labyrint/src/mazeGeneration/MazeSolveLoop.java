@@ -53,19 +53,19 @@ public class MazeSolveLoop implements MazeSolver {
 				stack.push(thisNode);
 				x++;
 			}
-			else if (y - 1 > 0 && !south.get(x).get(y) && !visited.get(x).get(y-1)) {
-				// Försöker flytta nedåt
-				MazeNode thisNode = new MazeNode(x,y);
-				visited.get(x).set(y,true);
-				stack.push(thisNode);
-				y--;
-			}
 			else if (y + 1 <= n && !north.get(x).get(y) && !visited.get(x).get(y+1)) {
 				// Försöker flytta up
 				MazeNode thisNode = new MazeNode(x,y);
 				visited.get(x).set(y,true);
 				stack.push(thisNode);
 				y++;
+			}
+			else if (y - 1 > 0 && !south.get(x).get(y) && !visited.get(x).get(y-1)) {
+				// Försöker flytta nedåt
+				MazeNode thisNode = new MazeNode(x,y);
+				visited.get(x).set(y,true);
+				stack.push(thisNode);
+				y--;
 			}
 			else if (x - 1 > 0 && !west.get(x).get(y) && !visited.get(x-1).get(y)) {
 				// Försöker flytta vänster
