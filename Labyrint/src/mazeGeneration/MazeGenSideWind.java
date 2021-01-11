@@ -188,9 +188,9 @@ public class MazeGenSideWind implements MazeGeneration {
 	public boolean goOrStop() {
 
 		Random random = new Random();
-		int ifgo = random.nextInt(4-1)+1;
+		int ifgo = random.nextInt(3-1)+1;
 
-		if(ifgo < 3) {
+		if(ifgo < 2) {
 			return true;
 		}
 		else {
